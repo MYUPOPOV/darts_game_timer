@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board Games Timer</title>
-    <link rel="shortcut icon" href="./images/favicon.ico">
+    <title>Darts Counter</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="./js/main.js" defer></script>
@@ -18,22 +18,37 @@
   <body class="">
     <header class="header">
       <select name="playersNumber" id="select_playersNumber">
+        <option value="2">2 игрока</option>
         <option value="3">3 игрока</option>
         <option value="4">4 игрока</option>
-        <option value="2">2 игрока</option>
+        <option value="1">Одиночная</option>
       </select>
       <select name="timeRemaining" id="select_timeRemaining">
-        <option value="10">10 мин</option>
-        <option value="20">20 мин</option>
-        <option value="5">5 мин</option>
+        <option value="Classic">Classic mode</option>
+        <option value="Art">Art mode</option>
+        <option value="Cartoon">Cartoon mode</option>
       </select>
       <select name="addingTime" id="select_addingTime">
-        <option value="20">+ 20 сек</option>
-        <option value="30">+ 30 сек</option>
-        <option value="10">+ 10 сек</option>
+        <option value="501">501</option>
+        <option value="401">401</option>
+        <option value="301">301</option>
+        <!-- <option value="0">Набор</option> -->
       </select>
       <button class="header__button" id="start_game">ОК</button>
     </header>
+    <footer class="footer">
+      <div class="footer-left">
+        <div class="total-timer">0 мин 0 сек</div>
+      </div>
+      <div class="round_counter">
+        <label class="round_counter__label">Круг: </label>
+        <label class="round_counter__counter"></label>
+      </div>
+      <div class="footer-right">
+        <button class="footer__button" id="avatar_mode">ПАУЗА</button>
+      </div>
+    </footer>
+
 
     <main class="main">
       <div class="player player_1">
@@ -55,18 +70,7 @@
         <div class="player_3__timeRemaining"></div>
       </div>
     </main>
-    <footer class="footer">
-      <div class="footer-left">
-        <div class="total-timer">0 мин 0 сек</div>
-      </div>
-      <div class="round_counter">
-        <label class="round_counter__label">Круг: </label>
-        <label class="round_counter__counter"></label>
-      </div>
-      <div class="footer-right">
-        <button class="footer__button" id="avatar_mode">classic_mode</button>
-      </div>
-    </footer>
+
     <div class="popup">
       <div class="popup__message"></div>
     </div>

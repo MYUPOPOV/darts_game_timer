@@ -37,6 +37,11 @@
   filter: grayscale(100%);
   transition: 1s;
 }
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 
 // main
 html {
@@ -56,12 +61,26 @@ body {
     line-height: 1.2 !important;
   }
 }
-
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  @media screen and (min-width: 1024px) {
+    width: 1024px;
+  }
+}
 .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-init {
   margin: 15px;
   display: flex;
   justify-content: center;
   font-size: 18px;
+
 
   &__button {
     height: 38px;
@@ -85,12 +104,18 @@ body {
   }
 }
 
-.footer {
-  width: 95vw;
-  height: 24px;
+.header-game {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  // width: 95vw;
+  // height: 24px;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+  // @media screen and (min-width: 1024px) {
+  //   width: 1024px;
+  // }
+
 
   &__button {
     height: 24px;
@@ -123,6 +148,7 @@ body {
 
 #select_timeRemaining, #select_addingTime, #select_playersNumber {
   width: 150px;
+  height: 38px;
   margin-right: 10px;
   padding: 5px;
   border-radius: 10px;

@@ -19,21 +19,21 @@
     <header>
       <div class="header header-init">
         <div class="row">
-          <select name="playersNumber" id="select_playersNumber">
+          <select class="header__select" name="playersNumber" id="select_playersNumber">
             <option value="2">2 игрока</option>
             <option value="3">3 игрока</option>
             <option value="4">4 игрока</option>
             <option value="1">Одиночная</option>
           </select>
-          <button class="header-init__button" id="start_game">ОК</button>
+          <button class="header__button" id="start_game">ОК</button>
         </div>
         <div class="row">
-          <select name="timeRemaining" id="select_timeRemaining">
+          <select class="header__select" name="timeRemaining" id="select_timeRemaining">
             <option value="Classic">Classic mode</option>
             <option value="Art">Art mode</option>
             <option value="Cartoon">Cartoon mode</option>
           </select>
-          <select name="addingTime" id="select_addingTime">
+          <select class="header__select" name="addingTime" id="select_addingTime">
             <option value="501">501</option>
             <option value="401">401</option>
             <option value="301">301</option>
@@ -41,53 +41,169 @@
           </select>
         </div>
       </div>
-
       <div class="header header-game" style="display: none">
         <div class="row">
-          <!-- <div class="header-game-right"> -->
-          <button class="header-game__button" id="avatar_mode">НАЗАД</button>
-          <!-- </div> -->
-          <!-- <div class="header-game-right"> -->
-          <button class="header-game__button" id="avatar_mode">ПАУЗА</button>
-          <!-- </div> -->
+          <button class="header__button" id="avatar_mode">НАЗАД</button>
+          <button class="header__button" id="avatar_mode">ПАУЗА</button>
         </div>
         <div class="row">
-          <!-- <div class="header-game-left"> -->
-          <div class="total-timer">0 мин 0 сек</div>
-          <!-- </div> -->
-          <div class="round_counter">
-            <label class="round_counter__label">Круг: </label>
-            <label class="round_counter__counter"></label>
+          <div class="header__indicator" id="total-timer">0 мин 0 сек</div>
+          <div class="header__indicator">
+            <label>Круг: </label>
+            <label id="round_counter"></label>
           </div>
         </div>
       </div>
     </header>
 
     <main class="main">
-      <div class="player-avatars">
-        <div class="player player_1">
-          <div><img class="player__image" data-image="1" src="./assets/images/avatars/classic_mode/nobleman_1.png" /></div>
-          <input class="player__input" placeholder="ИГРОК 1" />
-          <label class="player__label hidden">ИГРОК 1</label>
-          <div class="player_1__timeRemaining"></div>
+      <div class="main-wrapper">
+
+        <div class="main__side">
+          <div class="player player_1">
+            <input class="player__input" placeholder="ИГРОК 1" />
+            <label class="player__label hidden">ИГРОК 1</label>
+            <div><img class="player__image" data-image="1" src="./assets/images/avatars/classic_mode/nobleman_1.png" /></div>
+            <div class="player_1__timeRemaining">1:06</div>
+            <div class="player_1__score">501</div>
+          </div>
+          <div class="player player_2">
+            <input class="player__input" placeholder="ИГРОК 2" />
+            <label class="player__label hidden">ИГРОК 2</label>
+            <div><img class="player__image" data-image="2" src="./assets/images/avatars/classic_mode/nobleman_2.png" /></div>
+            <div class="player_2__timeRemaining"></div>
+            <div class="player_2__score"></div>
+          </div>
+          <div class="player player_3">
+            <input class="player__input" placeholder="ИГРОК 3" />
+            <label class="player__label hidden">ИГРОК 3</label>
+            <div><img class="player__image" data-image="3" src="./assets/images/avatars/classic_mode/nobleman_3.png" /></div>
+            <div class="player_3__timeRemaining"></div>
+            <div class="player_3__score"></div>
+          </div>
+          <div class="player player_4">
+            <input class="player__input" placeholder="ИГРОК 4" />
+            <label class="player__label hidden">ИГРОК 4</label>
+            <div><img class="player__image" data-image="4" src="./assets/images/avatars/classic_mode/nobleman_4.png" /></div>
+            <div class="player_4__timeRemaining"></div>
+            <div class="player_4__score"></div>
+          </div>
         </div>
-        <div class="player player_2">
-          <div><img class="player__image" data-image="2" src="./assets/images/avatars/classic_mode/nobleman_2.png" /></div>
-          <input class="player__input" placeholder="ИГРОК 2" />
-          <label class="player__label hidden">ИГРОК 2</label>
-          <div class="player_2__timeRemaining"></div>
+
+        <div class="main__side">
+          <div class="throw-input">
+            <input type="checkbox">
+            <select style="width: 70%">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="-">-</option>
+            </select>
+            <input type="checkbox">
+          </div>
+          <div class="throw-input">
+            <input type="checkbox">
+            <select style="width: 70%">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="-">-</option>
+            <input type="checkbox">
+          </div>
+          <div class="throw-input">
+            <input type="checkbox">
+            <select style="width: 70%">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="-">-</option>
+            </select>
+            <input type="checkbox">
+          </div>
+          <button style="height: 20px"></button>
         </div>
-        <div class="player player_3">
-          <div><img class="player__image" data-image="3" src="./assets/images/avatars/classic_mode/nobleman_3.png" /></div>
-          <input class="player__input" placeholder="ИГРОК 3" />
-          <label class="player__label hidden">ИГРОК 3</label>
-          <div class="player_3__timeRemaining"></div>
-        </div>
-      </div>
-      <div class="score-points">
 
       </div>
     </main>
+
+    <!-- <select>
+      <option value="0">0</option>
+      <option value="9">9</option>
+      <option value="12">12</option>
+      <option value="5">5</option>
+      <option value="20">20</option>
+      <option value="1">1</option>
+      <option value="18">18</option>
+      <option value="4">4</option>
+      <option value="13">13</option>
+      <option value="6">6</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="2">2</option>
+      <option value="17">17</option>
+      <option value="3">3</option>
+      <option value="19">19</option>
+      <option value="7">7</option>
+      <option value="16">16</option>
+      <option value="8">8</option>
+      <option value="11">11</option>
+      <option value="14">14</option>
+      <option value="-">-</option>
+    </select> -->
 
     <div class="popup">
       <div class="popup__message"></div>

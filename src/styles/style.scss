@@ -1,28 +1,8 @@
-// @font-face {
-//   font-family: 'Roboto';
-//   src: local('Roboto'), url('../assets/fonts/Roboto-Regular.woff2') format('woff2'),
-//   url('../assets/fonts/Roboto-Regular.woff') format('woff');
-// 	font-style: normal;
-// 	font-weight: normal;
-//   font-display: swap;
-// }
-// @font-face {
-//   font-family: 'Roboto';
-//   src: local('Roboto'), url('../assets/fonts/Roboto-Italic.woff2') format('woff2'),
-//   url('../assets/fonts/Roboto-Italic.woff') format('woff');
-// 	font-style: italic;
-// 	font-weight: normal;
-//   font-display: swap;
-// }
-// @font-face {
-//   font-family: 'Roboto';
-//   src: local('Roboto'), url('../assets/fonts/Roboto-Bold.woff2') format('woff2'),
-//   url('../assets/fonts/Roboto-Bold.woff') format('woff');
-// 	font-style: normal;
-// 	font-weight: bold;
-//   font-display: swap;
-// }
+// Variables
+$main_color: #f9f2ea;
+$hover_color: #faebdc;
 
+// Fonts
 @font-face {
   font-family: 'Helvetica';
   src: local('Helvetica'), url('../assets/fonts/Helvetica-Medium.woff2') format('woff2'),
@@ -40,193 +20,136 @@
   font-display: swap;
 }
 
-
-
-// helpers
+// Helpers
 .unactive {
   color: #D0D0D0;
 }
+
 .bold {
   font-weight: 800;
 }
+
 .hidden {
   display: none;
 }
+
 .grayscale {
   filter: grayscale(100%);
   transition: 1s;
 }
+
 .row {
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 5px;
 }
 
-// main
+// Main
 html {
   font-family: 'Helvetica';
   font-size: 16px;
 }
+
 body {
   position: relative;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  @media screen and (max-width: 900px)  {
-    line-height: 1.2 !important;
-  }
 }
+
 header {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  // @media screen and (min-width: 1024px) {
-  //   width: 1024px;
-  // }
+  padding-top: 5px;
 }
+
 .header {
-  width: 420px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // @media screen and (min-width: 1024px) {
-  //   width: 1024px;
-  // }
-}
-.header-init {
-  margin: 15px;
-  display: flex;
-  justify-content: center;
-  // font-size: 18px;
-
+  width: 420px;
 
   &__button {
     height: 38px;
-    padding: 5px;
     width: 200px;
-    // margin-right: 10px;
+    border: solid 1px;
     border-radius: 10px;
-    background-color: #f9f2ea;
-    border-width: 1px;
-    @media screen and (max-width: 420px) {
-      height: 20%;
+    background-color: $main_color;
+    text-transform: uppercase;
+    &:hover {
+      background-color: $hover_color;
+      cursor: pointer;
+    }
+    &:active {
+      border: solid 2px;
     }
   }
 
-  &__button:hover {
-    background-color: #faebdc;
-  }
-
-  &__button:active {
-    border-width: 2px;
-  }
-}
-
-.header-game {
-  display: flex;
-  justify-content: center;
-  // width: 95vw;
-  // height: 24px;
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: center;
-  // @media screen and (min-width: 1024px) {
-  //   width: 1024px;
-  // }
-
-
-  &__button {
-    height: 24px;
-    padding: 0;
-    // font-size: 16px;
-    text-transform: uppercase;
-  }
-
-  &__button {
+  &__select {
+    width: 200px;
     height: 38px;
     padding: 5px;
-    width: 200px;
-    // margin-right: 10px;
+    border: solid 1px;
     border-radius: 10px;
-    background-color: #f9f2ea;
-    border-width: 1px;
+    text-align: center;
+    &:hover {
+      background-color: $hover_color;
+      cursor: pointer;
+    }
   }
 
-  &__button:hover {
-    background-color: #faebdc;
+  &__indicator {
+    width: 200px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #000 1px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
   }
-
-  &__button:active {
-    border-width: 2px;
-  }
-}
-.total-timer, .round_counter {
-  width: 200px;
-  height: 36px;
-  border: solid #000 1px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // margin-left: 30px;
-}
-
-#select_timeRemaining, #select_addingTime, #select_playersNumber {
-  width: 200px;
-  height: 38px;
-  // margin-right: 10px;
-  padding: 5px;
-  border-radius: 10px;
-  text-align: center;
-  @media screen and (max-width: 420px)  {
-    width: 20%;
-}
 }
 
 main {
-  width: 95vw;
-  height: calc(100vh - 68px - 44px);
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: #f9f2ea;
-  border-radius: 20px;
-  margin: 0 20px 0 20px;
-  @media screen and (max-width: 900px)  {
-    width: 100vw;
+  padding-top: 5px;
+  border-top: solid 2px $hover_color;
+}
+
+.main {
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 420px;
   }
-  @media screen and (max-width:  420px)  {
+  &__side {
+    display: flex;
     flex-direction: column;
+    width: 50%;
   }
 }
 
 .player {
-  width: 23%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  height: 50px;
-  // width: 100%;
-  width: 50%;
-  padding: 5px;
   border-radius: 5px;
   text-align: center;
   text-transform: uppercase;
   @media screen and (max-width: 420px) {
-    width: 50%;
+    // width: 50%;
   }
 
   &__input {
-    height: 50px;
-    width: 100%;
-    padding: 5px;
+    // padding: 5px;
     border-radius: 5px;
     text-align: center;
     text-transform: uppercase;
@@ -236,7 +159,7 @@ main {
   }
 
   &__image {
-    width: 100%;
+    width: 120px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 3px 2px 10px;

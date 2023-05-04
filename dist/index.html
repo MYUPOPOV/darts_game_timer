@@ -17,31 +17,31 @@
 
   <body class="">
     <header>
-      <div class="header header-init">
+      <div class="header header_init">
         <div class="row">
           <select class="header__select" name="playersNumber" id="select_playersNumber">
-            <option value="2">2 игрока</option>
-            <option value="3">3 игрока</option>
-            <option value="4">4 игрока</option>
-            <option value="1">Одиночная</option>
+            <option value="4">1 player</option>
+            <option value="2">2 player</option>
+            <option value="3">3 player</option>
+            <option value="4">4 player</option>
           </select>
-          <button class="header__button" id="start_game">ОК</button>
+          <button class="header__button" id="btn_gameStart">GAME START</button>
         </div>
         <div class="row">
-          <select class="header__select" name="timeRemaining" id="select_timeRemaining">
-            <option value="Classic">Classic mode</option>
-            <option value="Art">Art mode</option>
-            <option value="Cartoon">Cartoon mode</option>
-          </select>
-          <select class="header__select" name="addingTime" id="select_addingTime">
+          <select class="header__select" name="scoreMode" id="select_scoreMode">
+            <option value="0">Points collecting</option>
             <option value="501">501</option>
             <option value="401">401</option>
             <option value="301">301</option>
-            <!-- <option value="0">Набор</option> -->
+          </select>
+          <select class="header__select" name="avatarMode" id="select_avatarMode">
+            <option value="0">Classic mode</option>
+            <option value="1">Art mode</option>
+            <option value="2">Cartoon mode</option>
           </select>
         </div>
       </div>
-      <div class="header header-game" style="display: none">
+      <div class="header header_game hidden">
         <div class="row">
           <button class="header__button" id="avatar_mode">НАЗАД</button>
           <button class="header__button" id="avatar_mode">ПАУЗА</button>
@@ -61,36 +61,32 @@
 
         <div class="main__side">
           <div class="player">
-            <input class="player__input" placeholder="ИГРОК 1" type="text" required />
-            <!-- <label class="player__label hidden">ИГРОК 1</label> -->
-            <div><img class="player__image" data-image="1" src="./assets/images/avatars/classic_mode/nobleman_1.png" /></div>
-            <div class="player__icon player__time-remaining">1:06</div>
-            <div class="player__icon player__score">501</div>
+            <input class="player__input" placeholder="ИГРОК 1" id="player_1_name" type="text" required />
+            <div><img class="player__image" data-image="0" src="./assets/images/avatars/classic_mode/nobleman_0.png" id="player_1_image" /></div>
+            <div class="player__icon player__time" id="player_1_time"></div>
+            <div class="player__icon player__score" id="player_1_score"></div>
           </div>
           <div class="player">
-            <input class="player__input" placeholder="ИГРОК 2" type="text" required />
-            <!-- <label class="player__label hidden">ИГРОК 2</label> -->
-            <div><img class="player__image" data-image="2" src="./assets/images/avatars/classic_mode/nobleman_2.png" /></div>
-            <div class="player__icon player__time-remaining"></div>
-            <div class="player__icon player__score"></div>
+            <input class="player__input" placeholder="ИГРОК 2" id="player_2_name" type="text" required />
+            <div><img class="player__image" data-image="1" src="./assets/images/avatars/classic_mode/nobleman_1.png" id="player_2_image" /></div>
+            <div class="player__icon player__time" id="player_2_time"></div>
+            <div class="player__icon player__score" id="player_2_score"></div>
           </div>
           <div class="player">
-            <input class="player__input" placeholder="ИГРОК 3" type="text" required />
-            <!-- <label class="player__label hidden">ИГРОК 3</label> -->
-            <div><img class="player__image" data-image="3" src="./assets/images/avatars/classic_mode/nobleman_3.png" /></div>
-            <div class="player__icon player__time-remaining"></div>
-            <div class="player__icon player__score"></div>
+            <input class="player__input" placeholder="ИГРОК 3" id="player_3_name" type="text" required />
+            <div><img class="player__image" data-image="2" src="./assets/images/avatars/classic_mode/nobleman_2.png" id="player_3_image" /></div>
+            <div class="player__icon player__time" id="player_3_time"></div>
+            <div class="player__icon player__score" id="player_3_score"></div>
           </div>
           <div class="player">
-            <input class="player__input" placeholder="ИГРОК 4" type="text" required />
-            <!-- <label class="player__label hidden">ИГРОК 4</label> -->
-            <div><img class="player__image" data-image="4" src="./assets/images/avatars/classic_mode/nobleman_4.png" /></div>
-            <div class="player__icon player__time-remaining"></div>
-            <div class="player__icon player__score"></div>
+            <input class="player__input" placeholder="ИГРОК 4" id="player_4_name" type="text" required />
+            <div><img class="player__image" data-image="3" src="./assets/images/avatars/classic_mode/nobleman_3.png" id="player_4_image" /></div>
+            <div class="player__icon player__time" id="player_4_time"></div>
+            <div class="player__icon player__score" id="player_4_score"></div>
           </div>
         </div>
 
-        <div class="main__side">
+        <div class="main__side hidden" id="score-input" >
           <div class="score">
               <div class="score__multiply"><label>х1</label></div>
               <select class="score__input score__select">
@@ -208,6 +204,6 @@
     <div class="popup">
       <div class="popup__message"></div>
     </div>
-    <audio src="./audio/click.mp3" autoplay="autoplay"></audio>
+    <audio src="./assets/audio/click.mp3" autoplay="autoplay"></audio>
   </body>
 </html>

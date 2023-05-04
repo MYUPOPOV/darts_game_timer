@@ -46,7 +46,7 @@ select {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .grayscale {
@@ -200,7 +200,7 @@ main {
     }
   }
 
-  &__time-remaining {
+  &__time {
     top: -10px;
     left: -10px;
     background-color: $time-color;

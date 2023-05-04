@@ -1,8 +1,9 @@
 import '../styles/style.scss'
 // import '../styles/bootstrap.css'
-import { main } from './modules/main';
 
-main();
+import { gameInit  } from './modules/game_init';
+
+gameInit ();
 
 
 

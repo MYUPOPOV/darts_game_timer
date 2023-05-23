@@ -15,6 +15,17 @@ const gameInit = function () {
 
 
   // Основной объект состояния инициализации игры
+
+  interface PlayerInit {
+    isActive: boolean;
+    name: string,
+    avatarIndex: number,
+    time: number,
+    scrore: number,
+  }
+
+  type PlayerInitType = PlayerInit
+
   const initState = {
     isGameStarted: false,
     playerNumber: 2,

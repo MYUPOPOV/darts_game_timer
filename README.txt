@@ -1,1 +1,0 @@
-https://danilin.biz/ios-device-display-resolution-reference.htm

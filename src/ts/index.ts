@@ -1,7 +1,8 @@
 import '../styles/style.scss'
 // import '../styles/bootstrap.css'
 
-import { gameInit  } from './modules/game_init';
+// import {PlayerInfo, GameState} from './modules/interfaces';
+import { gameInit } from './modules/game_init';
 
 gameInit ();
 
